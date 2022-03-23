@@ -91,7 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       word = longWords[address];
     }
-    console.log(word);
   }
 
   function getCurrentWordArr()
