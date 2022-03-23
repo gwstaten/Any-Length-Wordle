@@ -209,10 +209,27 @@ document.addEventListener("DOMContentLoaded", () => {
           if (currentWord == word || guessedWords.length == 6)
           {
             ended = true;
-            if(guessedWords.length == 6)
+            if(document.getElementById("myCheck").checked)
             {
-              window.alert(`Better luck next time, the word was ${word}`);
+              setTimeout(function(){
+                slider.value++;
+                output.innerHTML = slider.value;
+                document.getElementById("board").style = `grid-template-columns: repeat(${slider.value}, 1fr)`
+                clearSquares();
+                createSquares();
+                getNewWord();
+
+                guessedWords = [[]];
+                availableSpace = 1;
+                guessedWordCount = 0;
+                ended = false;
+              }, 500);
             }
+          }
+          else if(guessedWords.length == 6)
+          {
+            ended = true;
+            window.alert(`Better luck next time, the word was ${word}`);
           }
 
           guessedWords.push([]);
