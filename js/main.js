@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   slider.oninput = function() {
     output.innerHTML = this.value;
     document.getElementById("board").style = `grid-template-columns: repeat(${slider.value}, 1fr)`
+    var o = "o";
+    document.getElementById("title").innerHTML = "w" + o.repeat(slider.value) + "rdle";
     clearSquares();
     createSquares();
     getNewWord();
@@ -214,6 +216,8 @@ document.addEventListener("DOMContentLoaded", () => {
               setTimeout(function(){
                 slider.value++;
                 output.innerHTML = slider.value;
+                var o = "o";
+                document.getElementById("title").innerHTML = "w" + o.repeat(slider.value) + "rdle";
                 document.getElementById("board").style = `grid-template-columns: repeat(${slider.value}, 1fr)`
                 clearSquares();
                 createSquares();
