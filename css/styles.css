@@ -71,8 +71,8 @@ header {
 
 .square {
   border: 2px solid rgb(58, 58, 60);
-  min-width: 30px;
-  min-height: 30px;
+  min-width: 40px;
+  min-height: 40px;
   font-size: 20px;
   font-weight: bold;
   color: gainsboro;
@@ -84,13 +84,13 @@ header {
 }
 
 #keyboard-container {
-  height: 35%;
+  height: 25%;
 }
 
 .keyboard-row {
   display: flex;
   justify-content: center;
-  width: 60%;
+  width: 40%;
   height: 28%;
   margin: 0 auto 8px;
   touch-action: manipulation;

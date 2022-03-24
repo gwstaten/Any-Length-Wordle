@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
           x = win.innerWidth || docElem.clientWidth || body.clientWidth,
           y = win.innerHeight|| docElem.clientHeight|| body.clientHeight;
 
-    var newWidth = 30;
-    if(x * 0.70 < (slider.value * 30))
+    var newWidth = 40;
+    if(x * 0.70 < (slider.value * 40))
     {
         newWidth = x * 0.6 / slider.value;
     }
@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
           x = win.innerWidth || docElem.clientWidth || body.clientWidth,
           y = win.innerHeight|| docElem.clientHeight|| body.clientHeight;
 
-    var newWidth = 30;
-    if(x * 0.70 < (slider.value * 30))
+    var newWidth = 40;
+    if(x * 0.70 < (slider.value * 40))
     {
         newWidth = x * 0.6 / slider.value;
     }
@@ -290,8 +290,8 @@ document.addEventListener("DOMContentLoaded", () => {
                       x = win.innerWidth || docElem.clientWidth || body.clientWidth,
                       y = win.innerHeight|| docElem.clientHeight|| body.clientHeight;
 
-                var newWidth = 30;
-                if(x * 0.70 < (slider.value * 30))
+                var newWidth = 40;
+                if(x * 0.70 < (slider.value * 40))
                 {
                     newWidth = x * 0.6 / slider.value;
                 }
