@@ -102,6 +102,7 @@ header {
   border: 0;
   padding: 0;
   height: 95%;
+  display: block;
   cursor: pointer;
   background-color: rgb(129, 131, 132);
   color: rgb(215, 218, 220);
@@ -110,6 +111,11 @@ header {
   margin-right: 6px;
   border-radius: 4px;
   user-select: none;
+}
+@media (max-width: 750px) {
+    .keyboard-row {
+      min-width: 95%;
+    }
 }
 
 .keyboard-row button.wide-button {
