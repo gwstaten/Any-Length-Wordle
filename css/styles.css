@@ -84,13 +84,14 @@ header {
 }
 
 #keyboard-container {
-  height: 200px;
+  height: 35%;
 }
 
 .keyboard-row {
   display: flex;
   justify-content: center;
   width: 60%;
+  height: 28%;
   margin: 0 auto 8px;
   touch-action: manipulation;
 }
@@ -100,7 +101,7 @@ header {
   font-weight: bold;
   border: 0;
   padding: 0;
-  height: 58px;
+  height: 95%;
   cursor: pointer;
   background-color: rgb(129, 131, 132);
   color: rgb(215, 218, 220);

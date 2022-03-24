@@ -15,6 +15,24 @@ document.addEventListener("DOMContentLoaded", () => {
     clearSquares();
     createSquares();
     getNewWord();
+    var win = window,
+        doc = document,
+    docElem = doc.documentElement,
+       body = doc.getElementsByTagName('body')[0],
+          x = win.innerWidth || docElem.clientWidth || body.clientWidth,
+          y = win.innerHeight|| docElem.clientHeight|| body.clientHeight;
+
+    console.log(x);
+    var newWidth = 30;
+    if(x * 0.70 < (slider.value * 30))
+    {
+        newWidth = x * 0.6 / slider.value;
+    }
+    var elements = document.querySelectorAll('.square');
+    for(var i=0; i<elements.length; i++){
+      elements[i].style.minHeight = newWidth + "px";
+      elements[i].style.minWidth = newWidth + "px";
+    }
 
     guessedWords = [[]];
     availableSpace = 1;
@@ -226,6 +244,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 clearSquares();
                 createSquares();
                 getNewWord();
+                var win = window,
+                    doc = document,
+                docElem = doc.documentElement,
+                   body = doc.getElementsByTagName('body')[0],
+                      x = win.innerWidth || docElem.clientWidth || body.clientWidth,
+                      y = win.innerHeight|| docElem.clientHeight|| body.clientHeight;
+
+                console.log(x);
+                var newWidth = 30;
+                if(x * 0.70 < (slider.value * 30))
+                {
+                    newWidth = x * 0.6 / slider.value;
+                }
+                var elements = document.querySelectorAll('.square');
+                for(var i=0; i<elements.length; i++){
+                  elements[i].style.minHeight = newWidth + "px";
+                  elements[i].style.minWidth = newWidth + "px";
+                }
 
                 guessedWords = [[]];
                 availableSpace = 1;
