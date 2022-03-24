@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (currentWord == word || guessedWords.length == 6)
           {
             ended = true;
-            if(document.getElementById("myCheck").checked)
+            if(document.getElementById("myCheck").checked && slider.value != 25)
             {
               setTimeout(function(){
                 slider.value++;
