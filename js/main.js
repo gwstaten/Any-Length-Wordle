@@ -110,6 +110,11 @@ document.addEventListener("DOMContentLoaded", () => {
       board.removeChild(child);
       child = board.lastElementChild;
     }
+    for(var i = 0; i < 26; i++)
+    {
+      var letter = String.fromCharCode(97+i);
+      document.getElementById(letter.toLowerCase()).style = `background-color:rgb(129, 131, 132);`;
+    }
   }
 
   function updateGuessedWords(letter)
@@ -158,7 +163,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentWordArr = getCurrentWordArr();
     if (currentWordArr.length != slider.value)
     {
-      window.alert("Guess not long enough");
     }
     else
     {
@@ -198,11 +202,11 @@ document.addEventListener("DOMContentLoaded", () => {
           currentWordArr.forEach((letter, index) => {
             setTimeout(() => {
               const tileColor = getTileColor(currentWord, index);
-
               const letterId = firstLetterId + index;
               const letterEl = document.getElementById(letterId);
               letterEl.classList.add("animate__flipInX");
               letterEl.style = `background-color:${tileColor};border-color:${tileColor}`;
+              document.getElementById(letter.toLowerCase()).style = `background-color:${tileColor};`;
             }, interval * index);
           });
 
