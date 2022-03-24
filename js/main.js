@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for(var i=0; i<elements.length; i++){
       elements[i].style.minHeight = newWidth + "px";
       elements[i].style.minWidth = newWidth + "px";
+      elements[i].style.fontSize = newWidth * 0.66 + "px";
     }
   });
   // Update the current slider value (each time you drag the slider handle)
@@ -49,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for(var i=0; i<elements.length; i++){
       elements[i].style.minHeight = newWidth + "px";
       elements[i].style.minWidth = newWidth + "px";
+      elements[i].style.fontSize = newWidth * 0.66 + "px";
     }
 
     guessedWords = [[]];
@@ -297,6 +299,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 for(var i=0; i<elements.length; i++){
                   elements[i].style.minHeight = newWidth + "px";
                   elements[i].style.minWidth = newWidth + "px";
+                  elements[i].style.fontSize = newWidth * 0.66 + "px";
                 }
 
                 guessedWords = [[]];
