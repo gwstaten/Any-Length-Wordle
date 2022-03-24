@@ -5,7 +5,26 @@ const longWords = ["abdominoanterior","abdominocentesis","abdominohysterectomy",
 document.addEventListener("DOMContentLoaded", () => {
   var slider = document.getElementById("wordlengthslider");
   var output = document.getElementById("wordlength");
+  window.addEventListener('resize', function() {
+    var win = window,
+        doc = document,
+    docElem = doc.documentElement,
+       body = doc.getElementsByTagName('body')[0],
+          x = win.innerWidth || docElem.clientWidth || body.clientWidth,
+          y = win.innerHeight|| docElem.clientHeight|| body.clientHeight;
 
+    console.log(x);
+    var newWidth = 30;
+    if(x * 0.70 < (slider.value * 30))
+    {
+        newWidth = x * 0.6 / slider.value;
+    }
+    var elements = document.querySelectorAll('.square');
+    for(var i=0; i<elements.length; i++){
+      elements[i].style.minHeight = newWidth + "px";
+      elements[i].style.minWidth = newWidth + "px";
+    }
+  });
   // Update the current slider value (each time you drag the slider handle)
   slider.oninput = function() {
     output.innerHTML = this.value;
