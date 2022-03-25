@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       word = longAnswers[address].toLowerCase();
     }
-    console.log(word);
+    //console.log(word);
   }
 
   function getCurrentWordArr()
