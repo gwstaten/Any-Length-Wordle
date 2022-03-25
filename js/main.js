@@ -272,6 +272,21 @@ document.addEventListener("DOMContentLoaded", () => {
               letterEl.classList.add("animate__flipInX");
               letterEl.style = `background-color:${tileColor};border-color:${tileColor}`;
               document.getElementById(letter.toLowerCase()).style = `background-color:${tileColor};`;
+              var win = window,
+                  doc = document,
+              docElem = doc.documentElement,
+                 body = doc.getElementsByTagName('body')[0],
+                    x = win.innerWidth || docElem.clientWidth || body.clientWidth,
+                    y = win.innerHeight|| docElem.clientHeight|| body.clientHeight;
+
+              var newWidth = 40;
+              if(x * 0.70 < (slider.value * 40))
+              {
+                  newWidth = x * 0.6 / slider.value;
+              }
+              letterEl.style.minHeight = newWidth + "px";
+              letterEl.style.minWidth = newWidth + "px";
+              letterEl.style.fontSize = newWidth * 0.66 + "px";
             }, interval * index);
           });
 
@@ -380,6 +395,24 @@ document.addEventListener("DOMContentLoaded", () => {
         availableSpace = 1;
         guessedWordCount = 0;
         ended = false;
+        var win = window,
+            doc = document,
+        docElem = doc.documentElement,
+           body = doc.getElementsByTagName('body')[0],
+              x = win.innerWidth || docElem.clientWidth || body.clientWidth,
+              y = win.innerHeight|| docElem.clientHeight|| body.clientHeight;
+
+        var newWidth = 40;
+        if(x * 0.70 < (slider.value * 40))
+        {
+            newWidth = x * 0.6 / slider.value;
+        }
+        var elements = document.querySelectorAll('.square');
+        for(var i=0; i<elements.length; i++){
+          elements[i].style.minHeight = newWidth + "px";
+          elements[i].style.minWidth = newWidth + "px";
+          elements[i].style.fontSize = newWidth * 0.66 + "px";
+        }
         return;
       }
 
