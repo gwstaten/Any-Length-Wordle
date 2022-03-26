@@ -7,6 +7,7 @@ var shortAnswers = ["aa","ab","ad","ag","ah","ai","am","an","as","at","aw","ax",
 document.addEventListener("DOMContentLoaded", () => {
   var slider = document.getElementById("wordlengthslider");
   var output = document.getElementById("wordlength");
+  var text = "";
   window.addEventListener('resize', function() {
     var win = window,
         doc = document,
@@ -81,6 +82,24 @@ document.addEventListener("DOMContentLoaded", () => {
           availableSpace = 1;
           guessedWordCount = 0;
           ended = false;
+          var win = window,
+              doc = document,
+          docElem = doc.documentElement,
+             body = doc.getElementsByTagName('body')[0],
+                x = win.innerWidth || docElem.clientWidth || body.clientWidth,
+                y = win.innerHeight|| docElem.clientHeight|| body.clientHeight;
+
+          var newWidth = 40;
+          if(x * 0.70 < (slider.value * 40))
+          {
+              newWidth = x * 0.6 / slider.value;
+          }
+          var elements = document.querySelectorAll('.square');
+          for(var i=0; i<elements.length; i++){
+            elements[i].style.minHeight = newWidth + "px";
+            elements[i].style.minWidth = newWidth + "px";
+            elements[i].style.fontSize = newWidth * 0.66 + "px";
+          }
           return;
         }
       }
@@ -141,6 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       word = longAnswers[address].toLowerCase();
     }
+    text = "gwstaten.github.io\n" + slider.value + " letters: " + word + "\n";
     //console.log(word);
   }
 
@@ -185,6 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
   {
     if(wordToGrade.charAt(index) == word.charAt(index))
     {
+      text += "🟩";
       return "rgb(83, 141, 78)";
     }
     var numInGuess = 0;
@@ -202,8 +223,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if(numInGuess < numInWord)
     {
+      text += "🟨";
       return "rgb(181, 159, 59)";
     }
+    text += "⬜";
     return "rgb(58, 58, 60)";
   }
 
@@ -344,6 +367,9 @@ document.addEventListener("DOMContentLoaded", () => {
               window.alert(`Better luck next time, the word was ${word}`);
             }
           }
+          setTimeout(function(){
+            text += "\n";
+          }, 500);
 
           guessedWords.push([]);
       }
@@ -427,6 +453,20 @@ document.addEventListener("DOMContentLoaded", () => {
       if(letter === "del" && !ended)
       {
         handleDeleteLetter();
+        return;
+      }
+
+      if(letter == "copy")
+      {
+        if(ended)
+        {
+          navigator.clipboard.writeText(text);
+          window.alert(`Results copied to clipboard!`);
+        }
+        else
+        {
+          window.alert(`Cannot copy result of an unfinished game`);
+        }
         return;
       }
 
