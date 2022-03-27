@@ -133,6 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getNewWord()
   {
+    document.getElementById("alert").innerHTML = "";
     if(slider.value <= 15 && slider.value >= 4)
     {
       var address = Math.floor(Math.random() * possibleAnswers.length * 0.7);
@@ -364,7 +365,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             if(word != currentWord)
             {
-              window.alert(`Better luck next time, the word was ${word}`);
+              document.getElementById("alert").innerHTML = `Better luck next time, the word was ${word}`;
             }
           }
           setTimeout(function(){
@@ -461,11 +462,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if(ended)
         {
           navigator.clipboard.writeText(text);
-          window.alert(`Results copied to clipboard!`);
+          document.getElementById("alert").innerHTML = "Results copied to clipboard";
         }
         else
         {
-          window.alert(`Cannot copy result of an unfinished game`);
+          document.getElementById("alert").innerHTML = "Cannot copy result of an unfinished game";
         }
         return;
       }
@@ -473,7 +474,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if(letter === "end" && !ended)
       {
         ended = true;
-        window.alert(`Better luck next time, the word was ${word}`);
+        document.getElementById("alert").innerHTML = `Better luck next time, the word was ${word}`;
         return;
       }
 
