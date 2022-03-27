@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getNewWord()
   {
-    document.getElementById("alert").innerHTML = "";
+    document.getElementById("alert").innerHTML = " ";
     if(slider.value <= 15 && slider.value >= 4)
     {
       var address = Math.floor(Math.random() * possibleAnswers.length * 0.7);
