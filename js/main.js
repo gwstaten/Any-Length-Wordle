@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
       text += "🟨";
       return "rgb(181, 159, 59)";
     }
-    text += "⬜";
+    text += "⬛";
     return "rgb(58, 58, 60)";
   }
 
