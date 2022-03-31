@@ -185,6 +185,10 @@ document.addEventListener("DOMContentLoaded", () => {
       var letter = String.fromCharCode(97+i);
       document.getElementById(letter.toLowerCase()).style = `background-color:rgb(129, 131, 132);`;
     }
+    for(var i = 0; i < timeouts.length; i++)
+    {
+      clearTimeout(timeouts[i]);
+    }
   }
 
   function updateGuessedWords(letter)
@@ -230,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
     text += "⬛";
     return "rgb(58, 58, 60)";
   }
-
+  var timeouts = [0];
   function handleSubmitWord()
   {
     const currentWordArr = getCurrentWordArr();
@@ -297,7 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const firstLetterId = guessedWordCount * slider.value + 1;
           const interval = 20;
           currentWordArr.forEach((letter, index) => {
-            setTimeout(() => {
+            timeouts[index] = setTimeout(() => {
               const tileColor = getTileColor(currentWord, index);
               const letterId = firstLetterId + index;
               const letterEl = document.getElementById(letterId);
