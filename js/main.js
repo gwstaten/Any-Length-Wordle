@@ -136,10 +136,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("alert").innerHTML = " ";
     if(slider.value <= 15 && slider.value >= 4)
     {
-      var address = Math.floor(Math.random() * possibleAnswers.length * 0.7);
+      var address = Math.floor(Math.random() * possibleAnswers.length * 0.365);
       while(possibleAnswers[address].length != slider.value || possibleAnswers[address][0] == '*')
       {
-        address = Math.floor(Math.random() * possibleAnswers.length * 0.7);
+        address = Math.floor(Math.random() * possibleAnswers.length * 0.365);
       }
       word = possibleAnswers[address].toLowerCase();
     }
