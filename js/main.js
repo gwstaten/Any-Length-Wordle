@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       else
       {
-        if(!ended)
+        if(!ended && e.keyCode >= 65 && e.keyCode <= 90)
         {
           updateGuessedWords(String.fromCharCode(e.keyCode));
         }
