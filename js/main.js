@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     text = "gwstaten.github.io\n" + slider.value + " letters: " + word + "\n";
     keyColors = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-    console.log(word);
+    //console.log(word);
   }
 
   function getCurrentWordArr()
