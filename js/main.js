@@ -349,10 +349,10 @@ document.addEventListener("DOMContentLoaded", () => {
               const letterEl = document.getElementById(letterId);
               letterEl.classList.add("animate__flipInX");
               letterEl.style = `background-color:${tileColor};border-color:${tileColor}`;
-              if(keyColors[letter.toLowerCase() - 'a'] < log)
+              if(keyColors[letter.toLowerCase().charCodeAt(0) - 97] <= log)
               {
                 document.getElementById(letter.toLowerCase()).style = `background-color:${tileColor};`;
-                keyColors[letter.toLowerCase() - 'a'] = log;
+                keyColors[letter.toLowerCase().charCodeAt(0) - 97] = log;
               }
               var win = window,
                   doc = document,
