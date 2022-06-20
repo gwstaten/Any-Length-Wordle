@@ -427,7 +427,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (currentWord == word || guessedWords.length == 6)
           {
             ended = true;
-            if(document.getElementById("myCheck").checked && sliderVal() != slider.max && word == currentWord)
+            if(document.getElementById("myCheck").checked && slider.value != slider.max && word == currentWord)
             {
               setTimeout(function(){
                 sliderVal()++;
