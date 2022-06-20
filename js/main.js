@@ -112,6 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
     guessedWordCount = 0;
     ended = false;
   }
+  document.getElementById("animationSlider").oninput = function() {
+    document.getElementById("animationLength").textContent = this.value;
+  }
 
   document.onkeydown = function (e) {
       e = e || window.event;
@@ -184,7 +187,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getNewWord()
   {
-    console.log(sliderVal());
     document.getElementById("alert").innerHTML = " ";
     if(sliderVal() <= 15 && sliderVal() >= 4)
     {
@@ -391,7 +393,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if(!notfound)
       {
           const firstLetterId = guessedWordCount * sliderVal() + 1;
-          const interval = 20;
+          const interval = document.getElementById("animationSlider").value;
           currentWordArr.forEach((letter, index) => {
             timeouts[index] = setTimeout(() => {
               const tileColor = getTileColor(currentWord, index);
@@ -399,10 +401,17 @@ document.addEventListener("DOMContentLoaded", () => {
               const letterEl = document.getElementById(letterId);
               letterEl.classList.add("animate__flipInX");
               letterEl.style = `background-color:${tileColor};border-color:${tileColor}`;
-              if(keyColors[letter.toLowerCase().charCodeAt(0) - 97] <= log)
+              if(document.getElementById("BlindCheck").checked)
               {
-                document.getElementById(letter.toLowerCase()).style = `background-color:${tileColor};`;
-                keyColors[letter.toLowerCase().charCodeAt(0) - 97] = log;
+                letterEl.textContent = "";
+              }
+              else
+              {
+                if(keyColors[letter.toLowerCase().charCodeAt(0) - 97] <= log)
+                {
+                  document.getElementById(letter.toLowerCase()).style = `background-color:${tileColor};`;
+                  keyColors[letter.toLowerCase().charCodeAt(0) - 97] = log;
+                }
               }
               var win = window,
                   doc = document,
@@ -424,13 +433,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
           guessedWordCount += 1;
 
-          if (currentWord == word || guessedWords.length == 6)
+          if(currentWord == word || guessedWords.length == 6)
           {
             ended = true;
+            console.log(slider.max);
+            console.log(slider.value);
             if(document.getElementById("myCheck").checked && slider.value != slider.max && word == currentWord)
             {
               setTimeout(function(){
-                sliderVal()++;
+                slider.value++;
                 output.innerHTML = sliderVal();
                 var o = "o";
                 document.getElementById("title").innerHTML = "w" + o.repeat(sliderVal()) + "rdle";
@@ -461,7 +472,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 availableSpace = 1;
                 guessedWordCount = 0;
                 ended = false;
-              }, 500);
+              }, interval * sliderVal());
             }
             if(word != currentWord)
             {

@@ -36,10 +36,16 @@
           <div class="slidecontainer">
             <p class="settingDisplay">Obscure words only: </p>
             <input type="checkbox" id="ObscureCheck">
+            <p class="settingDisplay"> --- I have no life: </p>
+            <input type="checkbox" id="LifeCheck">
+            <p class="settingDisplay"> --- Blind: </p>
+            <input type="checkbox" id="BlindCheck">
           </div>
           <div class="slidecontainer">
-            <p class="settingDisplay">I have no life: </p>
-            <input type="checkbox" id="LifeCheck">
+            <p class="settingDisplay">Animation length per letter: </p>
+            <p id = "animationLength" class="settingDisplay">20</p>
+            <p class="settingDisplay">ms</p>
+            <input type="range" min="0" max="500" value="20" class="slider" id="animationSlider">
           </div>
           <div class="slidecontainer">
             <p class="settingDisplay" id="alert"> </p>
