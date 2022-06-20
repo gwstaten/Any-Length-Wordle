@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     else if(slider.value <= 30)
     {
-      return slider.value + 1;
+      return parseInt(slider.value) + 1;
     }
     else if(slider.value == 31)
     {
@@ -184,6 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getNewWord()
   {
+    console.log(sliderVal());
     document.getElementById("alert").innerHTML = " ";
     if(sliderVal() <= 15 && sliderVal() >= 4)
     {
