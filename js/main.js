@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   // Update the current slider value (each time you drag the slider handle)
   document.getElementById("LifeCheck").oninput = function() {
-    if(this.value)
+    if(this.checked)
     {
       slider.max = 33;
     }
@@ -390,7 +390,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
       }
-      if(!notfound)
+      if(!notfound || document.getElementById("AnyGuessCheck").checked)
       {
           const firstLetterId = guessedWordCount * sliderVal() + 1;
           const interval = document.getElementById("animationSlider").value;
