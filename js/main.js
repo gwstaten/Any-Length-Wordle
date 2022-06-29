@@ -444,7 +444,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 slider.value++;
                 output.innerHTML = sliderVal();
                 var o = "o";
-                document.getElementById("title").innerHTML = "w" + o.repeat(sliderVal()) + "rdle";
+                var a = "a";
+                if(this.value < 5)
+                {
+                  document.getElementById("title").innerHTML = "sh" + o.repeat(5 - sliderVal()) + "rtle";
+                }
+                else if(this.value == 5)
+                {
+                  document.getElementById("title").innerHTML = "wordle";
+                }
+                else if(this.value <= 15)
+                {
+                  document.getElementById("title").innerHTML = "l" + o.repeat(sliderVal() - 5) + "ngle";
+                }
+                else
+                {
+                  document.getElementById("title").innerHTML = "p" + a.repeat(sliderVal() - 15) + "infle";
+                }
                 document.getElementById("board").style = `grid-template-columns: repeat(${sliderVal()}, 1fr)`
                 clearSquares();
                 createSquares();
