@@ -436,8 +436,8 @@ document.addEventListener("DOMContentLoaded", () => {
           if(currentWord == word || guessedWords.length == 6)
           {
             ended = true;
-            console.log(slider.max);
-            console.log(slider.value);
+            //console.log(slider.max);
+            //console.log(slider.value);
             if(document.getElementById("myCheck").checked && slider.value != slider.max && word == currentWord)
             {
               setTimeout(function(){
@@ -445,15 +445,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 output.innerHTML = sliderVal();
                 var o = "o";
                 var a = "a";
-                if(this.value < 5)
+                if(sliderVal() < 5)
                 {
                   document.getElementById("title").innerHTML = "sh" + o.repeat(5 - sliderVal()) + "rtle";
                 }
-                else if(this.value == 5)
+                else if(sliderVal() == 5)
                 {
                   document.getElementById("title").innerHTML = "wordle";
                 }
-                else if(this.value <= 15)
+                else if(sliderVal() <= 15)
                 {
                   document.getElementById("title").innerHTML = "l" + o.repeat(sliderVal() - 5) + "ngle";
                 }
