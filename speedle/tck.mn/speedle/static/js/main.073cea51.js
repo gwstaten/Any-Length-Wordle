@@ -475,6 +475,18 @@
                     obs: {
                         dictionary: new Set(O.concat(M)),
                         targets: O
+                    },
+                    tr: {
+                        dictionary: new Set(T.concat(M)),
+                        targets: ["tramp"]
+                    },
+                    gb: {
+                        dictionary: new Set(T.concat(M)),
+                        targets: ["gonch","blogs"]
+                    },
+                    bp: {
+                        dictionary: new Set(T.concat(M)),
+                        targets: ["brick","podgy"]
                     }
                 },
                 F = function(e, s) {
@@ -1466,6 +1478,15 @@
                                 children: [(0, j.jsx)("option", {
                                     value: "hw",
                                     children: "custom wordlist"
+                                }),(0, j.jsx)("option", {
+                                    value: "tr",
+                                    children: "tramp-le"
+                                }),(0, j.jsx)("option", {
+                                    value: "gb",
+                                    children: "gonchBlogs-le"
+                                }),(0, j.jsx)("option", {
+                                    value: "bp",
+                                    children: "brickPodgy-le"
                                 })]
                             })]
                         }), (0, j.jsx)("p", {
