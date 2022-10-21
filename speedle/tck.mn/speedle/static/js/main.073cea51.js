@@ -481,13 +481,21 @@
                         dictionary: new Set(T.concat(M)),
                         targets: ["tramp"]
                     },
-                    gb: {
+                    go: {
                         dictionary: new Set(T.concat(M)),
-                        targets: ["gonch","blogs"]
+                        targets: ["gonch"]
                     },
-                    bp: {
+                    bl: {
                         dictionary: new Set(T.concat(M)),
-                        targets: ["brick","podgy"]
+                        targets: ["blogs"]
+                    },
+                    br: {
+                        dictionary: new Set(T.concat(M)),
+                        targets: ["brick"]
+                    },
+                    po: {
+                        dictionary: new Set(T.concat(M)),
+                        targets: ["podgy"]
                     },
                     we: {
                         dictionary: new Set(T.concat(M).concat(weird)),
@@ -1487,11 +1495,17 @@
                                     value: "tr",
                                     children: "tramp-le"
                                 }),(0, j.jsx)("option", {
-                                    value: "gb",
-                                    children: "gonchBlogs-le"
+                                    value: "go",
+                                    children: "gonch-le"
                                 }),(0, j.jsx)("option", {
-                                    value: "bp",
-                                    children: "brickPodgy-le"
+                                    value: "bl",
+                                    children: "blogs-le"
+                                }),(0, j.jsx)("option", {
+                                    value: "br",
+                                    children: "brick-le"
+                                }),(0, j.jsx)("option", {
+                                    value: "po",
+                                    children: "podgy-le"
                                 }),(0, j.jsx)("option", {
                                     value: "we",
                                     children: "weirdle"
