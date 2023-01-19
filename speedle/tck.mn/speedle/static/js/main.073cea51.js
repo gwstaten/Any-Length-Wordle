@@ -501,6 +501,10 @@
                         dictionary: new Set(T.concat(M)),
                         targets: ["fling"]
                     },
+                    cl: {
+                        dictionary: new Set(T.concat(M)),
+                        targets: ["clump"]
+                    },
                     we: {
                         dictionary: new Set(T.concat(M).concat(weird)),
                         targets: weird
@@ -1513,6 +1517,9 @@
                                 }),(0, j.jsx)("option", {
                                     value: "fl",
                                     children: "fling-le"
+                                }),(0, j.jsx)("option", {
+                                    value: "cl",
+                                    children: "clump-le"
                                 }),(0, j.jsx)("option", {
                                     value: "we",
                                     children: "weirdle"
