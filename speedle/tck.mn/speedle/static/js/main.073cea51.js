@@ -497,6 +497,10 @@
                         dictionary: new Set(T.concat(M)),
                         targets: ["podgy"]
                     },
+                    fl: {
+                        dictionary: new Set(T.concat(M)),
+                        targets: ["fling"]
+                    },
                     we: {
                         dictionary: new Set(T.concat(M).concat(weird)),
                         targets: weird
@@ -1506,6 +1510,9 @@
                                 }),(0, j.jsx)("option", {
                                     value: "po",
                                     children: "podgy-le"
+                                }),(0, j.jsx)("option", {
+                                    value: "fl",
+                                    children: "fling-le"
                                 }),(0, j.jsx)("option", {
                                     value: "we",
                                     children: "weirdle"
