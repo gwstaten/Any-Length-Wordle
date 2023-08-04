@@ -410,7 +410,10 @@ document.addEventListener("DOMContentLoaded", () => {
               const tileColor = getTileColor(currentWord, index);
               const letterId = firstLetterId + index;
               const letterEl = document.getElementById(letterId);
-              letterEl.classList.add("animate__flipInX");
+              if(!document.getElementById("DACheck").checked)
+              {
+                letterEl.classList.add("animate__flipInX");
+              }
               letterEl.style = `background-color:${tileColor};border-color:${tileColor}`;
               if(document.getElementById("BlindCheck").checked)
               {
